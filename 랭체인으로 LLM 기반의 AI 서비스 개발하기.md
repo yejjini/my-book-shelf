@@ -8,11 +8,11 @@
 통계적 $\rightarrow$ 신경망 언어 모델 $\rightarrow$ 트렌스포머 [거대 언어모델 (LLM)]
 
 1. **통계적:** 확률 통계적 방법 기반 얼마나 자주 나오는지  
-   * 1-gram(unigram) , 2-gram(bygram) , 3-gram(trigram)
+   * 1-gram(unigram) , 2-gram(bigram) , 3-gram(trigram)
 
 2. **신경망:** input layer(데이터 받아들여), hidden layer(데이터 처리), output layer(최종결과 생성)로 구성 and its all connected and has its own diverse neuron(node).  
    * **RNN(recurrent neural networks):** 과거의 정보가 현재에 영향을 미침, 공간이 적기 때문에 긴데이터 처리 한계  
-   * **LSTM(long short-term memory networks):** improve version of rnn , 긴 시퀀스 정보 기억 delete and undate possible
+   * **LSTM(long short-term memory networks):** improve version of rnn , 긴 시퀀스 정보 기억 delete and update possible
 
 ### LLM
 * 대규모 데이터로 훈련된 큰 규모의 인공지능 기반 언어모델 ex) gpt, gemini , turbo
