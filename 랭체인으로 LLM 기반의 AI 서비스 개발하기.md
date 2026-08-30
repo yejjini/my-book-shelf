@@ -64,24 +64,36 @@ RAG ( Retrieval-Augmented Generation) : retrieval <-> generation 정보 검색�
 2.2 LLM 활용시 주의사항
 1. 정보 필터링
 2. 법적인 규제
-3. 할루시네이션(Hallucination): 언어모델이 부정확하거나 관련없는 정보를 생성하는 현상.  -> temperature 사용을  hallucination 방지
+3. 할루시네이션(Hallucination): 언어모델이 부정확하거나 관련없는 정보를 생성하는 현상.  -> temperature 사용 to  hallucination 방지
 4. 보안
 
 
 3.1 RAG 개념, 구현 과정
 RAG ( Retrieval-Augmented Generation)- llm 에서 인터넷 정보가 필요할 때 그 정보를 가져다 텍스트로 바꿔주는거 
 
-1. 정보 검색 : 질문 입력 (query) ,
-
+1. 정보 검색 : 질문 입력 (query) , 검색 , 유사도 검색(keyword search , semantic search-관련성 높은 결과 제공), 랭킹 처리 (벡터 유사도, 코사인 유사도)
    
-3. 텍스트 생성
-
-
-
-
+   
+2. 텍스트 생성 : (검색 엔진의 경우) 결과 반환, (LLM 의 경우)텍스트 생성
 
 
 3.2 RAG 구현시 필요한 것
+1. 데이터 -> semantic ,vector search 두가지 방법으로 사용
+
+to use vector search have to know 임베딩Embeding !!- 복잡한 데이터를 간단하게 바꾸는 것 , 컴퓨터가 이해할 수 있도록 숫자(벡터)로 바꾸는거 
+for embeding we need embeding model -> Word2vec , GloVe, open ai embeding model 
+
+2. 벡터 데이터베이스 - 벡터를 저장하는 저장소 + 데이터 관리, 검색하는 일 , 데이터의 정확한 값 대신 데이터간의 '유사성'을 바탕으로 검색하는데 사용
+-Pinecone: for complex data
+-Milvus :deal with various type of vector data
+-Qdrant : high-dimensional data
+-Chroma : for LLM
+-Elasticsearch : strong search data analysis funtion
+-FAISS : USING INDEX SO NEED THE RELETIVE INFO BEFORE STARTED 
+
+   
+5. 프레임워크(랭체인) : 언어모델을 위한 프레임워크 , LLM을 활용하여 손쉽게 서비스를 개발할 수 있는 도구 
+   
 
 
 
